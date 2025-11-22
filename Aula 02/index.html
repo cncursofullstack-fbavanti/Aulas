@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <form action="">
+        <p>
+            <label for="cpf">CPF</label>
+            <input 
+                type="tel"
+                name="cpf"
+                inputmode="numeric"
+                pattern="\d{3}.\d{3}.\d{3}-\d{2}"
+                placeholder="000.000.000-00"
+                maxlength="14"
+                id="cpf"
+            />
+        </p>
+        
+        <p>
+            <label for="data">Data</label>
+            <input type="date" name="data" id="data">
+        </p>
+        
+        <p>
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome">
+        </p>
+        
+        <p>
+            <label for="paises">Países</label>
+            <select name="paises" id="paises" placeholder="teste">
+                <option value="br">Brasil</option>
+                <option value="ar">Argentina</option>
+                <option value="ch">Chile</option>
+            </select>
+        </p>
+        
+        <p>
+            Aula de
+            <input type="radio" name="aula" id="html" value="html"><label for="html">html</label>
+            <input type="radio" name="aula" id="css" value="css"><label for="css">css</label>
+            <input type="radio" name="aula" id="js" value="js"><label for="js"> js</label>
+        </p>
+    </form>
+</body>
+</html>

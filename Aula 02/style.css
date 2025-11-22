@@ -1,0 +1,17 @@
+
+form {
+    display: block;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+label[for="data"] {
+    background-color: aqua;
+}
+
+label {
+    display: inline-block;
+    min-width: 50px;
+    background-color: lightgray;
+}
+
