@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // Definindo a coleção de objeto dos alunos com suas respectivas notas, nomes, médias e situação
+        const alunos = [
+            {
+                "nome" : "João Vicente", 
+                "notas" : [7, 8, 9],
+                "media": 0,
+                "situacao": ""
+            }, {
+                "nome": "Maria Clara", 
+                "notas": [6, 9, 10],
+                "media": 0,
+                "situacao": ""
+            }, {
+                "nome": "Pedro Henrique", 
+                "notas": [5, 7, 8],
+                "media": 0,
+                "situacao": ""
+            },  {
+                "nome": "Ana Beatriz", 
+                "notas": [8, 9, 10],
+                "media": 0,
+                "situacao": ""
+            }
+        ];
+        
+        // Definindo a coleção de classe com suas respectivas estatísticas
+        const classe = {
+            "situacao": {
+                "aprovados" : 0,
+                "recuperacao" : 0,
+                "reprovados" : 0,
+            }, 
+            "media_turma": 0,
+            "maior_media": {},
+            "menor_media": {},
+        }
+
+        // Calcula média de cada aluno e sua situação, além de atualizar as estatísticas da classe
+        for (let i = 0; i < alunos.length; i++) {
+            let aluno = alunos[i];
+            let soma = 0;
+            for (let j = 0; j < aluno.notas.length; j++) {
+                soma += aluno.notas[j];
+            }
+            let media = soma / aluno.notas.length;
+            aluno.media = media;
+            if (aluno.media >= 7) {
+                aluno.situacao = "Aprovado";
+                classe.situacao.aprovados += 1;
+            } else if (aluno.media >= 4) {
+                aluno.situacao = "Recuperação";
+                classe.situacao.recuperacao += 1;
+            } else {
+                aluno.situacao = "Reprovado";
+                classe.situacao.reprovados += 1;
+            }
+            
+            // Verifica maior média
+            if(classe.maior_media.media === undefined || aluno.media > classe.maior_media.media) {
+                classe.maior_media = aluno;
+            }
+            // Verifica menor média
+            if(classe.menor_media.media === undefined || aluno.media < classe.menor_media.media) {
+                classe.menor_media = aluno;
+            }
+
+            console.log(`A média de ${aluno.nome} é ${aluno.media.toFixed(2)}. A situação é ${aluno.situacao}`);
+        }
+
+        // Calcula média da turma
+        let soma_turma = 0;
+        for (let i = 0; i < alunos.length; i++) {
+            soma_turma += alunos[i].media;
+        }
+        classe.media_turma = soma_turma / alunos.length;
+    </script>
+</body>
+</html>

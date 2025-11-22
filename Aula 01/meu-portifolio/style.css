@@ -1,0 +1,281 @@
+/* cores primárias do portfólio */
+:root {
+    --cor-fundo: #FFF8E4;
+    --cor-texto: #80319C;
+    --cor-principal: #487a36;
+}
+/* Alternando modo claro e escuro */
+.dark-mode {
+    --cor-fundo: #1c1c1c;
+    --cor-texto: #f0f8ff;
+}
+
+/* margem e altura completa */
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: background-color 0.8s ease, color 0.8s 0.4s ease;
+}
+
+header {
+    background-color: var(--cor-principal);
+    color: white;
+}
+
+.header-content {
+    text-align: center;
+    padding: 60px 20px 40px;
+}
+
+.header-content h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.5rem;
+}
+
+.header-content p {
+    font-size: 1.2rem;
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* estilo da navegação */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.1)
+}
+
+/* ajustes do elemento de âncora da barra de navegação */
+.nav-brand a {
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.nav-brand a:hover {
+    opacity: 0.5;
+}
+
+/* retirando o elemento disco */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin: 0
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: opacity 0.3s ease;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.tema-toggle {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    border-radius: 6px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-width: 110px;
+}
+
+.tema-toggle:hover {
+    background-color: white;
+    color: var(--cor-principal);
+}
+
+/* estilizando a main usando flexbox */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+    flex: 1;
+}
+
+/* estilo geral da section */
+section {
+    margin-bottom: 30px;
+    scroll-margin-top: 20px;
+}
+
+/* estilo geral dos botões */
+button {
+    background-color: var(--cor-principal);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 15px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+.oculto {
+    display: none;
+}
+
+/* Estilos para a seção projetos */
+.projetos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.projeto-card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projeto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.projeto-card h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--cor-principal);
+}
+
+.projeto-descricao {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    min-height: 40px;
+}
+
+.projeto-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.tag {
+    background-color: #e8f4f8;
+    color: var(--cor-principal);
+    border-radius: 15px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.projeto-links {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-secundario {
+    background-color:transparent;
+    color: var(--cor-principal);
+    border: 2px solid var(--cor-principal);
+    border-radius: 6px;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease
+}
+
+.btn-secundario:hover {
+    background-color: var(--cor-principal);
+    color: white;
+    opacity: 1;
+}
+
+.adicionar-projeto {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.adicionar-projeto h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--cor-principal);
+}
+
+.adicionar-projeto input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.adicionar-projeto input:focus {
+    border-color: var(--cor-principal);
+    outline: none;
+}
+
+footer {
+    background-color: var(--cor-principal);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .header-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .header-content p {
+        font-size: 1rem;
+    }
+}

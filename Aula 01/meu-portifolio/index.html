@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio Web</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="#home">Caetano Neto</a>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+            </ul>
+            <button id="temaBtn" class="tema-toggle">Modo Escuro</button>   
+        </nav>
+        
+        <div class="header-content">
+            <h1>Olá, eu sou <span>Caetano Neto</span></h1>
+            <p>Gerente de Projetos | PO | UX/UI Designer</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="sobre">
+            <h2>Sobre Mim</h2>
+            <p>
+                Eu gosto muito de explorar minha criatividade de forma prática da 
+                escultura digital no ZBrush e Blender à impressão 3D com minha 
+                Bambu Lab. Gosto de mergulhar em tecnologias que ampliam minha 
+                capacidade de entregar, facilitar e liderar, sempre buscando 
+                melhorar processos e acelerar resultados. Fora do trabalho, 
+                valorizo experiências significativas: minhas leituras de fantasia, 
+                apoiar os sonhos da Emilia e do João e me dedicar a projetos que unam paixão 
+                e propósito.
+            </p>
+            <button id="mostrarMaisBtn">Mostrar Mais</button>
+            <ul id="extra" class="oculto">
+                <li><strong>ZBrush</strong> – modelagem e escultura digital.</li>
+                <li><strong>Blender</strong> – modelagem, texturização e preparação para impressão 3D (workflow em milímetros).</li>
+                <li><strong>Google Planilhas</strong> - Ferramentas de busca e manipulação no Google Planilhas – fórmulas, filtros, formatação, navegação.</li>
+                <li><strong>Azure DevOps (ADO)</strong> – gestão de backlog, pipelines e organização de times.</li>
+                <li><strong>Jira</strong> – uso de JQL, gestão de sprints e acompanhamento de demandas.</li>
+                <li><strong>Práticas Ágeis</strong> – Scrum, SAFe (como SSM certificado).</li>
+            </ul>
+        </section>
+
+        <section id="projetos">
+            <h2>Meus Projetos</h2>
+            <div class="projetos-grid">
+                <div class="projeto-card">
+                    <h3>Exemplo de Projeto 1</h3>
+                    <p class="projeto-descricao">Descrição do Projeto</p>
+                    <ul class="projeto-tags">
+                        <li class="tag">HTML</li>
+                        <li class="tag">CSS</li>
+                        <li class="tag">JS</li>
+                    </ul>
+                    <div class="projeto-links">
+                        <button class="btn-secundario">Ver Demo</button>
+                        <button class="btn-secundario">Código</button>
+                    </div>
+                </div>
+
+                <div class="projeto-card">
+                    <h3>Exemplo de Projeto 2</h3>
+                    <p class="projeto-descricao">Descrição do Projeto</p>
+                    <ul class="projeto-tags">
+                        <li class="tag">HTML</li>
+                        <li class="tag">CSS</li>
+                        <li class="tag">JS</li>
+                    </ul>
+                    <div class="projeto-links">
+                        <button class="btn-secundario">Ver Demo</button>
+                        <button class="btn-secundario">Código</button>
+                    </div>
+                </div>
+
+                <div class="projeto-card">
+                    <h3>Exemplo de Projeto 3</h3>
+                    <p class="projeto-descricao">Descrição do Projeto</p>
+                    <ul class="projeto-tags">
+                        <li class="tag">HTML</li>
+                        <li class="tag">CSS</li>
+                        <li class="tag">JS</li>
+                    </ul>
+                    <div class="projeto-links">
+                        <button class="btn-secundario">Ver Demo</button>
+                        <button class="btn-secundario">Código</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="adicionar-projeto">
+                <h3>Adicionar Novo Projeto</h3>
+                <input type="text" name="nomeProjeto" id="nomeProjeto" placeholder="Nome do Projeto"  />
+                <input type="text" name="descricaoProjeto" id="descricaoProjeto" placeholder="Descrição do Projeto"  />
+                <button id="adicionarBtn">Adicionar</button>
+            </div>
+        </section>
+
+        <section id="contato">
+            <h2>Contato</h2>
+            <p>Entre em contato comigo através das redes sociais ou e-mail</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Criado por Caetano Neto</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+INÍCIO
+    // Definindo a coleção de alunos
+    DECLARAR alunos COMO VETOR DE REGISTROS
+    alunos[0] = {nome: "João Vicente", notas: [7, 8, 9], media: 0, situacao: ""}
+    alunos[1] = {nome: "Maria Clara", notas: [6, 9, 10], media: 0, situacao: ""}
+    alunos[2] = {nome: "Pedro Henrique", notas: [5, 7, 8], media: 0, situacao: ""}
+    alunos[3] = {nome: "Ana Beatriz", notas: [8, 9, 10], media: 0, situacao: ""}
+    
+    // Definindo o registro da classe
+    DECLARAR classe COMO REGISTRO
+    classe.situacao.aprovados = 0
+    classe.situacao.recuperacao = 0
+    classe.situacao.reprovados = 0
+    classe.media_turma = 0
+    classe.maior_media = VAZIO
+    classe.menor_media = VAZIO
+    
+    // Calcula média de cada aluno e sua situação
+    PARA i DE 0 ATÉ TAMANHO(alunos) - 1 FAÇA
+        aluno = alunos[i]
+        soma = 0
+        
+        // Soma todas as notas do aluno
+        PARA j DE 0 ATÉ TAMANHO(aluno.notas) - 1 FAÇA
+            soma = soma + aluno.notas[j]
+        FIM PARA
+        
+        // Calcula a média
+        media = soma / TAMANHO(aluno.notas)
+        aluno.media = media
+        
+        // Define a situação do aluno
+        SE aluno.media >= 7 ENTÃO
+            aluno.situacao = "Aprovado"
+            classe.situacao.aprovados = classe.situacao.aprovados + 1
+        SENÃO SE aluno.media >= 4 ENTÃO
+            aluno.situacao = "Recuperação"
+            classe.situacao.recuperacao = classe.situacao.recuperacao + 1
+        SENÃO
+            aluno.situacao = "Reprovado"
+            classe.situacao.reprovados = classe.situacao.reprovados + 1
+        FIM SE
+        
+        // Verifica se é a maior média
+        SE classe.maior_media = VAZIO OU aluno.media > classe.maior_media.media ENTÃO
+            classe.maior_media = aluno
+        FIM SE
+        
+        // Verifica se é a menor média
+        SE classe.menor_media = VAZIO OU aluno.media < classe.menor_media.media ENTÃO
+            classe.menor_media = aluno
+        FIM SE
+        
+        // Exibe informações do aluno
+        ESCREVER "A média de", aluno.nome, "é", aluno.media, ". A situação é", aluno.situacao
+    FIM PARA
+    
+    // Calcula média da turma
+    soma_turma = 0
+    PARA i DE 0 ATÉ TAMANHO(alunos) - 1 FAÇA
+        soma_turma = soma_turma + alunos[i].media
+    FIM PARA
+    
+    classe.media_turma = soma_turma / TAMANHO(alunos)
+FIM
