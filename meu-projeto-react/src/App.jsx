@@ -10,7 +10,13 @@ function App() {
     <>
       <HelloWorld nome="Caetano" />
       <Card 
-        nome="HTML" detalhe="HTML básico" />
+        nome="HTML" 
+        detalhe="Aprenda HTML básico, descubra como estruturar o seu conteudo e melhorar o seu resultado nos mecanismos de busca" 
+      />
+      <Card 
+        nome="CSS" 
+        detalhe="Aprenda como melhorar as apresentações do seu site. Adicionar animações" 
+      />
     </>
   )
 }
