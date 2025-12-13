@@ -16,3 +16,9 @@ https://dontpad.com/aula-fullstack-parte2
 
 ## Javascript
 Code Runner - extensão VSCode
+
+## React
+Vite
+
+## Tailwind
+Tailwind CSS Intellisense - extensão VSCode
