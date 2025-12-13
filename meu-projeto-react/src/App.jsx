@@ -29,10 +29,6 @@ function App() {
         <h3>React</h3>
         <p>Aprenda como melhorar as apresentações do seu site. Adicionar animações</p>
       </Card>
-      <Card>
-        <h3>Node</h3>
-        <p>Aprenda como melhorar as apresentações do seu site. Adicionar animações</p>
-      </Card>
     </div>
   </>
   )
