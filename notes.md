@@ -1,4 +1,4 @@
-Aula 03
+# Aulas
 https://dontpad.com/aula-fullstack-parte2
 
 ## Box Model
@@ -11,14 +11,18 @@ https://dontpad.com/aula-fullstack-parte2
 
 ## Grid
 - grid
--   template
--     columns
+- template
+- columns
 
 ## Javascript
 Code Runner - extensão VSCode
 
 ## React
+React Router DOM
 Vite
 
 ## Tailwind
 Tailwind CSS Intellisense - extensão VSCode
+Component Module - Component Styled
+
+
