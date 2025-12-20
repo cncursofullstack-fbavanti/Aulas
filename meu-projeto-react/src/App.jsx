@@ -4,6 +4,7 @@ import Navbar from './components/NavBar'
 import Home from './pages/Home'
 import Contact from './pages/Contact'
 import About from './pages/About'
+import FormLogin from './components/FormLogin'
 
 
 import './App.css'
@@ -24,6 +25,7 @@ function App() {
         </Routes>
 
         <button onClick={()=>{setContador(contador+1)}}>Clique {contador}</button>        
+        <FormLogin />
       </div>    
     </BrowserRouter>
   </>
