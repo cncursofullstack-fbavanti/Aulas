@@ -1,0 +1,57 @@
+### 1. Rota básica - Hello World
+GET http://localhost:3000/hello
+
+### 2. Rota raiz - Welcome message
+GET http://localhost:3000/
+
+### 3. Rota protegida SEM token (vai dar erro 401)
+GET http://localhost:3000/protected
+
+### 4. Rota protegida COM token correto (vai funcionar)
+GET http://localhost:3000/protected
+Authorization: 123456
+
+### 5. Rota protegida COM token ERRADO (vai dar erro 401)
+GET http://localhost:3000/protected
+Authorization: wrong-token
+
+### 6. Criar usuário SEM dados (vai dar erro 400)
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{}
+
+### 7. Criar usuário SEM nome (vai dar erro 400)
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "email": "test@example.com"
+}
+
+### 8. Criar usuário SEM email (vai dar erro 400)
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "nome": "João"
+}
+
+### 9. Criar usuário COM TODOS os dados (vai funcionar ✅)
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "nome": "João Silva",
+  "email": "joao@example.com"
+}
+
+### 10. Criar outro usuário completo
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "nome": "Maria Santos",
+  "email": "maria@example.com",
+  "idade": 25
+}

@@ -1,0 +1,99 @@
+### ========== TESTES PÚBLICOS (Sem autenticação) ==========
+
+### 1. Listar todos os produtos
+GET http://localhost:3000/produtos
+
+### 2. Buscar produto por UUID (existente)
+GET http://localhost:3000/produtos/b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e
+
+### 3. Buscar produto por UUID (não existente) - deve retornar 404
+GET http://localhost:3000/produtos/00000000-0000-0000-0000-000000000000
+
+
+### ========== TESTES DE AUTENTICAÇÃO ==========
+
+### 4. Criar produto SEM token - deve retornar 401
+POST http://localhost:3000/produtos
+Content-Type: application/json
+
+{
+  "nome": "notebook"
+}
+
+### 5. Criar produto com token INVÁLIDO - deve retornar 401
+POST http://localhost:3000/produtos
+Content-Type: application/json
+Authorization: Bearer token-errado
+
+{
+  "nome": "tablet"
+}
+
+### 6. Deletar produto SEM token - deve retornar 401
+DELETE http://localhost:3000/produtos/a1b2c3d4-e5f6-4a7b-8c9d-0e1f2a3b4c5d
+
+
+### ========== TESTES DE CRIAÇÃO (Com token válido) ==========
+
+### 7. Criar produto COM token válido
+POST http://localhost:3000/produtos
+Content-Type: application/json
+Authorization: Bearer meu-token-secreto-123
+
+{
+  "nome": "notebook"
+}
+
+### 8. Criar produto sem nome - deve retornar 400
+POST http://localhost:3000/produtos
+Content-Type: application/json
+Authorization: Bearer meu-token-secreto-123
+
+{
+}
+
+### 9. Criar outro produto válido
+POST http://localhost:3000/produtos
+Content-Type: application/json
+Authorization: Bearer meu-token-secreto-123
+
+{
+  "nome": "monitor"
+}
+
+### 10. Tentar criar produto DUPLICADO - deve retornar 409
+POST http://localhost:3000/produtos
+Content-Type: application/json
+Authorization: Bearer meu-token-secreto-123
+
+{
+  "nome": "Notebook"
+}
+
+
+### ========== TESTES DE DELEÇÃO (Com token válido) ==========
+
+### 11. Deletar produto existente COM token
+DELETE http://localhost:3000/produtos/b2c3d4e5-f6a7-4b8c-9d0e-1f2a3b4c5d6e
+Authorization: Bearer meu-token-secreto-123
+
+### 12. Deletar produto inexistente - deve retornar 404
+DELETE http://localhost:3000/produtos/00000000-0000-0000-0000-000000000000
+Authorization: Bearer meu-token-secreto-123
+
+
+### ========== TESTES DE FLUXO COMPLETO ==========
+
+### 13. Criar produto "smartphone"
+POST http://localhost:3000/produtos
+Content-Type: application/json
+Authorization: Bearer meu-token-secreto-123
+
+{
+  "nome": "smartphone"
+}
+
+### 14. Listar produtos (verificar se "smartphone" foi criado)
+GET http://localhost:3000/produtos
+
+### 15. Buscar o produto criado (copie o UUID retornado no te
