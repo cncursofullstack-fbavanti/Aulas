@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const FormLogin = () => {
   const [email, setEmail] = useState("teste@teste.com");
   const [password, setPassword] = useState("***");
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   const submitLogin = (e) => {
     e.preventDefault();
@@ -27,6 +29,9 @@ const FormLogin = () => {
           <input type="password" value={password} onChange={(e) => {setPassword(e.target.value)}} />
           <button type="submit">Enviar</button>
         </form>
+        <div>
+          Ainda não tem cadastro, clique aqui: <button onClick={() => navigate('/addUser')}>Cadastro</button>
+        </div>
         {error && (
           <p>{error}</p>
         )}

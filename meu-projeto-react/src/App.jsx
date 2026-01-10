@@ -4,6 +4,7 @@ import Navbar from './components/NavBar'
 import Home from './pages/Home'
 import Contact from './pages/Contact'
 import About from './pages/About'
+import AddUser from './pages/AddUser'
 import FormLogin from './components/FormLogin'
 
 
@@ -22,6 +23,7 @@ function App() {
           <Route path="/" element={Home()} />
           <Route path="/about" element={About()} />
           <Route path="/contact" element={Contact()} />
+          <Route path="/addUser" element={AddUser()} />
         </Routes>
 
         <button onClick={()=>{setContador(contador+1)}}>Clique {contador}</button>        
