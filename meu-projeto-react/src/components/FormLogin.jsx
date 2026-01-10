@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 
 const FormLogin = () => {
-  const [ email, setEmail ] = useState("teste@teste.com");
-  const [ password, setPassword ] = useState("***");
-  const [ error, setError ] = useState("");
+  const [email, setEmail] = useState("teste@teste.com");
+  const [password, setPassword] = useState("***");
+  const [error, setError] = useState("");
 
   const submitLogin = (e) => {
     e.preventDefault();
 
-    if(!email || !password) {
+    if (!email || !password) {
       setError("Campo ou Campos obrigatórios vazio(s)!");
       return
     }
