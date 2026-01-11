@@ -1,8 +1,10 @@
 import React from "react";
+import Navbar from "../components/NavBar";
 
-const AddUser = () => {
+const Signin = () => {
   return (
     <>
+      <Navbar />
       <h1>Cadastro</h1>
 
       <h3>Cadastre-se</h3>
@@ -10,4 +12,4 @@ const AddUser = () => {
   )
 }
 
-export default AddUser;
+export default Signin;

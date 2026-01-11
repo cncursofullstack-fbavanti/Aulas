@@ -19,9 +19,7 @@ const FormLogin = () => {
 
   return (
     <>
-      <div className="min-h-screen flex items-center justify-center bg-gray-900">
-        <div className="bg-gray-800 p-8 rounded-lg shadow-lg w-full max-w-md">
-          <h1 className="text-3xl font-bold text-white mb-6 text-center">Login</h1>
+      
           
           <form onSubmit={submitLogin} className="space-y-4">
             <div>
@@ -58,8 +56,6 @@ const FormLogin = () => {
               <span>{error}</span>
             </p>
           )}
-        </div>
-      </div>
     </>
   )
 }

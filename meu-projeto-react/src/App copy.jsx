@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import HelloWorld from './components/HelloWorld'
 import UserList from './components/UserList'
 import Card from './components/Card'

@@ -9,8 +9,6 @@ const UserList = () => {
     { name: "Beltrano", age: 40 },
   ]
 
-  const numbers = [1,2,3]
-
   return (
     <section id="users">
       <h2>Users</h2>
